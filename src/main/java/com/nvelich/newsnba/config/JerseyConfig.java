@@ -1,13 +1,13 @@
-package config;
+package com.nvelich.newsnba.config;
 
+import com.nvelich.newsnba.endpoints.HelloEndpoint;
 import org.glassfish.jersey.server.ResourceConfig;
 import org.springframework.context.annotation.Configuration;
-import service.HelloService;
 
 @Configuration
 public class JerseyConfig extends ResourceConfig {
 
     public JerseyConfig() {
-        register(HelloService.class);
+        register(HelloEndpoint.class);
     }
 }
