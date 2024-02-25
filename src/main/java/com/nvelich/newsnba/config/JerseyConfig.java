@@ -1,6 +1,7 @@
 package com.nvelich.newsnba.config;
 
-import com.nvelich.newsnba.endpoints.HelloEndpoint;
+import com.nvelich.newsnba.endpoints.FetchNewsByPlayerEndpoint;
+import com.nvelich.newsnba.endpoints.PlayerRequestsCountEndpoint;
 import org.glassfish.jersey.server.ResourceConfig;
 import org.springframework.context.annotation.Configuration;
 
@@ -8,6 +9,7 @@ import org.springframework.context.annotation.Configuration;
 public class JerseyConfig extends ResourceConfig {
 
     public JerseyConfig() {
-        register(HelloEndpoint.class);
+        register(FetchNewsByPlayerEndpoint.class);
+        register(PlayerRequestsCountEndpoint.class);
     }
 }
