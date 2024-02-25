@@ -1,13 +1,19 @@
 package com.nvelich.newsnba.rapidapi;
 
+
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.nvelich.newsnba.models.Data;
+
 import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
+import java.util.List;
 
 public class RapidApiService {
-    public String fetchNewsBy(String player) throws IOException, InterruptedException {
+    public List<Data> fetchNewsBy(String player) throws IOException, InterruptedException {
         String fullEndpoint = RapidApiConfig.url + "/articles?player=" + player;
 
         HttpRequest request = HttpRequest.newBuilder()
@@ -19,5 +25,11 @@ public class RapidApiService {
         HttpResponse<String> response = HttpClient.newHttpClient()
                 .send(request, HttpResponse.BodyHandlers.ofString());
 
+        ObjectMapper objectMapper = new ObjectMapper();
+
+        return objectMapper.readValue(
+                response.body(),
+                new TypeReference<List<Data>>() {}
+        );
     }
 }
