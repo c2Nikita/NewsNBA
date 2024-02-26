@@ -35,7 +35,7 @@ public class FetchNewsByPlayerEndpoint {
             ObjectMapper mapper = new ObjectMapper();
             String jsonResult = mapper.writeValueAsString(list);
 
-            return Response.ok(jsonResult).build(); // TODO: make request to rapidapi and save to database
+            return Response.ok(jsonResult).build(); //
         } else  {
             return Response.status(Response.Status.BAD_REQUEST)
                     .entity(" Wrong name")
