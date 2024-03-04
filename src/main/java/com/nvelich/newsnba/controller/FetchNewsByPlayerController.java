@@ -1,4 +1,4 @@
-package com.nvelich.newsnba.endpoints;
+package com.nvelich.newsnba.controller;
 
 
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -9,22 +9,17 @@ import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.QueryParam;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
-import org.jvnet.hk2.annotations.Service;
 import com.nvelich.newsnba.models.Data;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.List;
 import java.util.regex.Pattern;
-import java.sql.DriverManager;
 
 
-@Service
+@RestController
 @Path("/articles")
-public class FetchNewsByPlayerEndpoint {
+public class FetchNewsByPlayerController {
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
