@@ -31,7 +31,6 @@ public class FetchNewsByPlayerController {
     @Produces(MediaType.APPLICATION_JSON)
     public Response articles(@QueryParam("player") String player) throws IOException, InterruptedException {
         if (player != null && Pattern.matches("[a-zA-Z]+", player)) {
-            System.out.println("Hello world!");
             RapidApiService service = new RapidApiService();
             List<JsonEntity> list = service.fetchNewsBy(player);
             ObjectMapper mapper = new ObjectMapper();
@@ -68,11 +67,10 @@ public class FetchNewsByPlayerController {
                         check = 0;
 
                     }
-                System.out.println("before save");
                 }
                 news.setId(null);
                 if(check == 1) {
-                    System.out.println("in save");
+
                     newsService.saveNews(news);
                 }
                 check = 1;

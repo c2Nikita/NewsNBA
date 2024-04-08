@@ -13,7 +13,6 @@ public class NewsService {
     private NewsRepository newsRepository;
 
     public News saveNews(News news) {
-        System.out.println("Heello world!post in function saveNews");
         return newsRepository.save(news);
     }
 

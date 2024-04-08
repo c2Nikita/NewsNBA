@@ -21,9 +21,7 @@ public class NewsController {
 
     @POST
     public Response addNews(News news) {
-        System.out.println("Heello world!post");
         News savedNews = newsService.saveNews(news);
-        System.out.println("try to save");
         return Response.ok(savedNews).build();
     }
 
