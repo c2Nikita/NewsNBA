@@ -57,25 +57,7 @@ public class FetchNewsByPlayerController {
             int check = 1;
             News news = new News();
             List<News> newsFromDataBase = newsService.getAllNews();
-            for(JsonEntity entity : list) {
-                news.setText(entity.getSource());
-                news.setTitle(entity.getTitle());
-                news.setPlayer(savedPlayer);
-                for(News newsEntity :newsFromDataBase)
-                {
-                    if(news.getTitle().equals(newsEntity.getTitle())) {
-                        check = 0;
-
-                    }
-                }
-                news.setId(null);
-                if(check == 1) {
-
-                    newsService.saveNews(news);
-                }
-                check = 1;
-
-            }
+           createNews(news,list,savedPlayer,newsFromDataBase,check);
 
 
 
@@ -105,6 +87,28 @@ public class FetchNewsByPlayerController {
             }
         }
         return answer;
+    }
+    public void createNews(News news,List<JsonEntity> list,Player savedPlayer,List<News> newsFromDataBase,int check)
+    {
+        for(JsonEntity entity : list) {
+            news.setText(entity.getSource());
+            news.setTitle(entity.getTitle());
+            news.setPlayer(savedPlayer);
+            for(News newsEntity :newsFromDataBase)
+            {
+                if(news.getTitle().equals(newsEntity.getTitle())) {
+                    check = 0;
+
+                }
+            }
+            news.setId(null);
+            if(check == 1) {
+
+                newsService.saveNews(news);
+            }
+            check = 1;
+
+        }
     }
 
 }
