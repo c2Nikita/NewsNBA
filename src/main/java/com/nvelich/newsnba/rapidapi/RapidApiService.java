@@ -3,7 +3,7 @@ package com.nvelich.newsnba.rapidapi;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.nvelich.newsnba.models.Data;
+import com.nvelich.newsnba.models.JsonEntity;
 import org.jvnet.hk2.annotations.Service;
 
 
@@ -15,7 +15,7 @@ import java.net.http.HttpResponse;
 import java.util.List;
 @Service
 public class RapidApiService {
-    public List<Data> fetchNewsBy(String player) throws IOException, InterruptedException {
+    public List<JsonEntity> fetchNewsBy(String player) throws IOException, InterruptedException {
         String fullEndpoint = RapidApiConfig.URL + "/articles?player=" + player;
 
         HttpRequest request = HttpRequest.newBuilder()
@@ -27,11 +27,10 @@ public class RapidApiService {
         HttpResponse<String> response = HttpClient.newHttpClient()
                 .send(request, HttpResponse.BodyHandlers.ofString());
 
-        ObjectMapper objectMapper = new ObjectMapper();
-
-        return objectMapper.readValue(
+        return new ObjectMapper().readValue(
                 response.body(),
-                new TypeReference<List<Data>>() {}
+                new TypeReference<List<JsonEntity>>() {}
         );
+
     }
 }
