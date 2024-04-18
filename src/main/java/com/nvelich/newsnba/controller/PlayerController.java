@@ -1,7 +1,9 @@
 package com.nvelich.newsnba.controller;
 
+import com.nvelich.newsnba.cache.PlayerCache;
 import com.nvelich.newsnba.models.News;
 import com.nvelich.newsnba.models.Player;
+import com.nvelich.newsnba.repositories.PlayerRepository;
 import com.nvelich.newsnba.service.PlayerService;
 import jakarta.ws.rs.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +22,10 @@ public class PlayerController {
 
     @Autowired
     private PlayerService playerService;
+    @Autowired
+    private PlayerRepository playerRepository;
+    @Autowired
+    private PlayerCache playerCache;
 
     @POST
     public Response addPlayer(Player player) {
@@ -67,5 +73,23 @@ public class PlayerController {
 
         Player savedPlayer = playerService.savePlayer(existingPlayer);
         return Response.ok(savedPlayer).build();
+    }
+
+    @GET
+    @Path("byName/{name}")
+    public Response getPlayerByName(@PathParam("name") String playerName) {
+        Player player = playerCache.getPlayer(playerName);
+        if (player == null) {
+            player = playerRepository.findByName(playerName);
+            if (player != null) {
+                playerCache.addPlayer(playerName, player);
+            }
+        }
+        if (player != null) {
+            return Response.ok(player).build();
+        } else {
+            return Response.status(Response.Status.NOT_FOUND).build();
+        }
+
     }
 }
