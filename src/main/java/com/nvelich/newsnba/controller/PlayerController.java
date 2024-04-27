@@ -1,10 +1,14 @@
 package com.nvelich.newsnba.controller;
 
 import com.nvelich.newsnba.cache.PlayerCache;
+import com.nvelich.newsnba.exceptions.ErrorResponse;
+import com.nvelich.newsnba.exceptions.YourFriendly400Exception;
+import com.nvelich.newsnba.exceptions.YourFriendly404Exception;
 import com.nvelich.newsnba.models.News;
 import com.nvelich.newsnba.models.Player;
 import com.nvelich.newsnba.repositories.PlayerRepository;
 import com.nvelich.newsnba.service.PlayerService;
+import jakarta.persistence.EntityNotFoundException;
 import jakarta.ws.rs.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -12,9 +16,12 @@ import jakarta.ws.rs.Path;
 import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
+import lombok.extern.slf4j.Slf4j;
 
 import java.util.List;
+import java.util.regex.Pattern;
 
+@Slf4j
 @Component
 @Path("/players")
 @Produces(MediaType.APPLICATION_JSON)
@@ -39,15 +46,16 @@ public class PlayerController {
         return Response.ok(players).build();
     }
 
-
     @GET
     @Path("/{id}")
+    @Produces(MediaType.APPLICATION_JSON)
     public Response getPlayerById(@PathParam("id") Long id) {
         Player player = playerService.getPlayerById(id);
         if (player != null) {
             return Response.ok(player).build();
         } else {
-            return Response.status(Response.Status.NOT_FOUND).build();
+            log.error("Игрок не найде: 404");
+            throw new YourFriendly404Exception("Player Not Found!!!", 404);
         }
     }
 
@@ -63,16 +71,13 @@ public class PlayerController {
     public Response updatePlayer(@PathParam("id") Long id, Player updatedPlayer) {
         Player existingPlayer = playerService.getPlayerById(id);
         if (existingPlayer == null) {
-            return Response.status(Response.Status.NOT_FOUND).entity("Player with id " + id + " not found").build();
+            throw new EntityNotFoundException("player with id " + id + " not found");
+        } else {
+            existingPlayer.setName(updatedPlayer.getName());
+            existingPlayer.setCount(updatedPlayer.getCount());
+            Player savedPlayer = playerService.savePlayer(existingPlayer);
+            return Response.ok(existingPlayer).build();
         }
-
-
-        existingPlayer.setName(updatedPlayer.getName());
-        existingPlayer.setCount(updatedPlayer.getCount());
-
-
-        Player savedPlayer = playerService.savePlayer(existingPlayer);
-        return Response.ok(savedPlayer).build();
     }
 
     @GET
@@ -81,14 +86,15 @@ public class PlayerController {
         Player player = playerCache.getPlayer(playerName);
         if (player == null) {
             player = playerRepository.findByName(playerName);
-            if (player != null) {
-                playerCache.addPlayer(playerName, player);
-            }
         }
         if (player != null) {
             return Response.ok(player).build();
+        } else if (!Pattern.matches("[a-zA-Z]+", playerName)) {
+            log.error("Неправильный запрос: 400");
+            throw new YourFriendly400Exception("Неправильный запрос !!!", 400);
         } else {
-            return Response.status(Response.Status.NOT_FOUND).build();
+            log.error("Игрок не найден в базе : 404");
+            throw new YourFriendly404Exception("Игрок не найден в базе!!!", 404);
         }
 
     }

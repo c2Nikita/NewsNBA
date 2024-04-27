@@ -29,7 +29,7 @@ public class RapidApiService {
 
         return new ObjectMapper().readValue(
                 response.body(),
-                new TypeReference<List<JsonEntity>>() {}
+                new TypeReference<List<JsonEntity>>() { }
         );
 
     }

@@ -26,9 +26,8 @@ public class News {
 
     private String text;
 
-
     @ManyToOne
-    @JoinColumn(name = "player_id",nullable = false)
+    @JoinColumn(name = "player_id", nullable = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
     private Player player;
 

@@ -1,16 +1,21 @@
 package com.nvelich.newsnba.controller;
 
+import com.nvelich.newsnba.exceptions.YourFriendly400Exception;
+import com.nvelich.newsnba.exceptions.YourFriendly404Exception;
+import com.nvelich.newsnba.exceptions.YourFriendly500Exception;
 import com.nvelich.newsnba.models.News;
 import com.nvelich.newsnba.service.NewsService;
 import jakarta.ws.rs.*;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 
 import java.util.List;
+import java.util.regex.Pattern;
 
-
+@Slf4j
 @Component
 @Path("/news")
 @Produces(MediaType.APPLICATION_JSON)
@@ -38,7 +43,8 @@ public class NewsController {
         if (news != null) {
             return Response.ok(news).build();
         } else {
-            return Response.status(Response.Status.NOT_FOUND).build();
+            log.error("Ошибка сервреа: 500");
+            throw new YourFriendly500Exception("ОШИБКА СЕРВЕРА !!!", 500);
         }
     }
 

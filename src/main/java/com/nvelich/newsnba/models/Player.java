@@ -7,6 +7,7 @@ import lombok.Setter;
 
 
 import java.util.List;
+
 @Getter
 @Setter
 @Entity
@@ -20,10 +21,8 @@ public class Player {
 
     private int count;
 
-
-    @OneToMany(mappedBy = "player", cascade = CascadeType.REMOVE,fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "player", cascade = CascadeType.REMOVE, fetch = FetchType.EAGER)
     @JsonIgnore
     private List<News> newsList;
-
 
 }
