@@ -68,7 +68,7 @@ public class PlayerController {
         Player existingPlayer = playerService.getPlayerById(id);
         existingPlayer.setName(updatedPlayer.getName());
         existingPlayer.setCount(updatedPlayer.getCount());
-        Player savedPlayer = playerService.savePlayer(existingPlayer);
+        playerService.savePlayer(existingPlayer);
         return Response.ok(existingPlayer).build();
 
     }
