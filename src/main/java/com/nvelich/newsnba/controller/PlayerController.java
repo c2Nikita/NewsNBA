@@ -51,12 +51,8 @@ public class PlayerController {
     @Produces(MediaType.APPLICATION_JSON)
     public Response getPlayerById(@PathParam("id") Long id) {
         Player player = playerService.getPlayerById(id);
-        if (player != null) {
-            return Response.ok(player).build();
-        } else {
-            log.error("Игрок не найде: 404");
-            throw new YourFriendly404Exception("Player Not Found!!!", 404);
-        }
+        return Response.ok(player).build();
+
     }
 
     @DELETE
@@ -70,32 +66,25 @@ public class PlayerController {
     @Path("/{id}")
     public Response updatePlayer(@PathParam("id") Long id, Player updatedPlayer) {
         Player existingPlayer = playerService.getPlayerById(id);
-        if (existingPlayer == null) {
-            throw new EntityNotFoundException("player with id " + id + " not found");
-        } else {
-            existingPlayer.setName(updatedPlayer.getName());
-            existingPlayer.setCount(updatedPlayer.getCount());
-            Player savedPlayer = playerService.savePlayer(existingPlayer);
-            return Response.ok(existingPlayer).build();
-        }
+        existingPlayer.setName(updatedPlayer.getName());
+        existingPlayer.setCount(updatedPlayer.getCount());
+        Player savedPlayer = playerService.savePlayer(existingPlayer);
+        return Response.ok(existingPlayer).build();
+
     }
 
     @GET
     @Path("byName/{name}")
     public Response getPlayerByName(@PathParam("name") String playerName) {
-        Player player = playerCache.getPlayer(playerName);
-        if (player == null) {
-            player = playerRepository.findByName(playerName);
-        }
-        if (player != null) {
+        if (Pattern.matches("[a-zA-Z]+", playerName)) {
+            Player player = playerCache.getPlayer(playerName);
+            if (player == null) {
+                player = playerRepository.findByName(playerName);
+            }
             return Response.ok(player).build();
-        } else if (!Pattern.matches("[a-zA-Z]+", playerName)) {
-            log.error("Неправильный запрос: 400");
-            throw new YourFriendly400Exception("Неправильный запрос !!!", 400);
         } else {
-            log.error("Игрок не найден в базе : 404");
-            throw new YourFriendly404Exception("Игрок не найден в базе!!!", 404);
+            log.info("Некорентный ввод данных");
+            throw new YourFriendly400Exception("Вы некоректно ввели данные!", 400);
         }
-
     }
 }

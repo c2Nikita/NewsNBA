@@ -1,5 +1,6 @@
 package com.nvelich.newsnba.service;
 
+import com.nvelich.newsnba.exceptions.YourFriendly404Exception;
 import com.nvelich.newsnba.models.Player;
 import com.nvelich.newsnba.repositories.PlayerRepository;
 import com.nvelich.newsnba.cache.PlayerCache;
@@ -22,31 +23,24 @@ public class PlayerService {
 
     @Transactional
     public Player savePlayer(Player player) {
-        try {
-            log.info("Сохранение игрока в базу данных: {}", player);
-            Player savedPlayer = playerRepository.save(player);
-            playerCache.addPlayer(savedPlayer.getName(), savedPlayer); // Добавление в кэш
-            log.info("Игрок успешно сохранен: {}", savedPlayer);
-            return savedPlayer;
-        } catch (Exception ex) {
-            log.error("Ошибка при сохранении игрока: {}", ex.getMessage());
-            throw new RuntimeException("Ошибка при сохранении игрока", ex);
-        }
+        log.info("Сохранение игрока в базу данных: {}", player);
+        Player savedPlayer = playerRepository.save(player);
+        playerCache.addPlayer(savedPlayer.getName(), savedPlayer); // Добавление в кэш
+        log.info("Игрок успешно сохранен: {}", savedPlayer);
+        return savedPlayer;
+
     }
 
     public List<Player> getAllPlayers() {
-        try {
-            log.info("Запрос всех игроков из базы данных");
-            List<Player> players = playerRepository.findAll();
-            for (Player player : players) {
-                playerCache.addPlayer(player.getName(), player); // Добавление в кэш
-            }
-            log.info("Получено {} игроков", players.size());
-            return players;
-        } catch (Exception ex) {
-            log.error("Ошибка при получении всех игроков: {}", ex.getMessage());
-            throw new RuntimeException("Ошибка при получении всех игроков", ex);
+
+        log.info("Запрос всех игроков из базы данных");
+        List<Player> players = playerRepository.findAll();
+        for (Player player : players) {
+            playerCache.addPlayer(player.getName(), player); // Добавление в кэш
         }
+        log.info("Получено {} игроков", players.size());
+        return players;
+
     }
 
     public Player getPlayerById(Long id) {
@@ -59,23 +53,22 @@ public class PlayerService {
                     playerCache.addPlayer(player.getName(), player); // Добавление в кэш
                 }
             }
-            return player;
-
+            if (player != null) {
+                return player;
+            } else {
+                log.info("Игрок не найден в базе по ID:{}", id);
+                throw new YourFriendly404Exception("Игрок не найден в базе", 404);
+            }
     }
 
     @Transactional
     public void deletePlayerById(Long id) {
-        try {
-            log.info("Удаление игрока по ID: {}", id);
-            Player player = getPlayerById(id); // Проверяем, существует ли игрок с таким ID
-            playerRepository.delete(player);
-            playerCache.removePlayer(String.valueOf(id)); // Удаление из кэша
-            log.info("Игрок успешно удален по ID: {}", id);
-        } catch (NotFoundException ex) {
-            throw ex; // Пробрасываем исключение NotFoundException дальше
-        } catch (Exception ex) {
-            log.error("Ошибка при удалении игрока по ID {}: {}", id, ex.getMessage());
-            throw new RuntimeException("Ошибка при удалении игрока по ID", ex);
-        }
+
+        log.info("Удаление игрока по ID: {}", id);
+        Player player = getPlayerById(id);
+        playerRepository.delete(player);
+        playerCache.removePlayer(String.valueOf(id));
+        log.info("Игрок успешно удален по ID: {}", id);
+
     }
 }

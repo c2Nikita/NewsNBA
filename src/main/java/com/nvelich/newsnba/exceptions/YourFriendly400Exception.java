@@ -7,7 +7,7 @@ import jakarta.ws.rs.core.Response;
 public class YourFriendly400Exception extends WebApplicationException {
     public YourFriendly400Exception(String message, int code) {
         super(Response.status(Response.Status.BAD_REQUEST)
-                .entity(new ErrorResponse(message,code))
+                .entity(new ErrorResponse(message, code))
                 .type(MediaType.APPLICATION_JSON)
                 .build());
     }

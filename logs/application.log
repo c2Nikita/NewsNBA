@@ -12175,3 +12175,179 @@ java.io.IOException: The server sockets created using the LocalRMIServerSocketFa
 2024-04-26 14:53:46.877 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
 2024-04-26 14:53:46.883 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
 2024-04-26 14:53:46.911 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-04-27 23:25:54.137 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2024-04-27 23:25:54.257 [restartedMain] INFO  c.n.newsnba.NewsNbaApplication - Starting NewsNbaApplication using Java 17.0.10 with PID 5292 (C:\Users\nikit\IdeaProjects\NewsNBA\build\classes\java\main started by nikit in C:\Users\nikit\IdeaProjects\NewsNBA)
+2024-04-27 23:25:54.258 [restartedMain] INFO  c.n.newsnba.NewsNbaApplication - No active profile set, falling back to 1 default profile: "default"
+2024-04-27 23:25:54.387 [restartedMain] INFO  o.s.b.d.restart.ChangeableUrls - The Class-Path manifest attribute in C:\Users\nikit\.gradle\caches\modules-2\files-2.1\org.glassfish.hk2\hk2\3.0.5\d203190ff24ae760555ad48f97af719640f58636\hk2-3.0.5.jar referenced one or more files that do not exist: file:/C:/Users/nikit/.gradle/caches/modules-2/files-2.1/org.glassfish.hk2/hk2/3.0.5/d203190ff24ae760555ad48f97af719640f58636/hk2-utils.jar,file:/C:/Users/nikit/.gradle/caches/modules-2/files-2.1/org.glassfish.hk2/hk2/3.0.5/d203190ff24ae760555ad48f97af719640f58636/jakarta.annotation-api.jar,file:/C:/Users/nikit/.gradle/caches/modules-2/files-2.1/org.glassfish.hk2/hk2/3.0.5/d203190ff24ae760555ad48f97af719640f58636/jakarta.inject-api.jar,file:/C:/Users/nikit/.gradle/caches/modules-2/files-2.1/org.glassfish.hk2/hk2/3.0.5/d203190ff24ae760555ad48f97af719640f58636/hk2-api.jar,file:/C:/Users/nikit/.gradle/caches/modules-2/files-2.1/org.glassfish.hk2/hk2/3.0.5/d203190ff24ae760555ad48f97af719640f58636/aopalliance-repackaged.jar,file:/C:/Users/nikit/.gradle/caches/modules-2/files-2.1/org.glassfish.hk2/hk2/3.0.5/d203190ff24ae760555ad48f97af719640f58636/hk2-core.jar,file:/C:/Users/nikit/.gradle/caches/modules-2/files-2.1/org.glassfish.hk2/hk2/3.0.5/d203190ff24ae760555ad48f97af719640f58636/hk2-locator.jar,file:/C:/Users/nikit/.gradle/caches/modules-2/files-2.1/org.glassfish.hk2/hk2/3.0.5/d203190ff24ae760555ad48f97af719640f58636/javassist.jar,file:/C:/Users/nikit/.gradle/caches/modules-2/files-2.1/org.glassfish.hk2/hk2/3.0.5/d203190ff24ae760555ad48f97af719640f58636/hk2-runlevel.jar,file:/C:/Users/nikit/.gradle/caches/modules-2/files-2.1/org.glassfish.hk2/hk2/3.0.5/d203190ff24ae760555ad48f97af719640f58636/class-model.jar,file:/C:/Users/nikit/.gradle/caches/modules-2/files-2.1/org.glassfish.hk2/hk2/3.0.5/d203190ff24ae760555ad48f97af719640f58636/asm.jar,file:/C:/Users/nikit/.gradle/caches/modules-2/files-2.1/org.glassfish.hk2/hk2/3.0.5/d203190ff24ae760555ad48f97af719640f58636/asm-analysis.jar,file:/C:/Users/nikit/.gradle/caches/modules-2/files-2.1/org.glassfish.hk2/hk2/3.0.5/d203190ff24ae760555ad48f97af719640f58636/asm-commons.jar,file:/C:/Users/nikit/.gradle/caches/modules-2/files-2.1/org.glassfish.hk2/hk2/3.0.5/d203190ff24ae760555ad48f97af719640f58636/asm-tree.jar,file:/C:/Users/nikit/.gradle/caches/modules-2/files-2.1/org.glassfish.hk2/hk2/3.0.5/d203190ff24ae760555ad48f97af719640f58636/asm-util.jar
+2024-04-27 23:25:54.387 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-04-27 23:25:54.388 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-04-27 23:25:55.503 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-04-27 23:25:55.576 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 61 ms. Found 2 JPA repository interfaces.
+2024-04-27 23:25:56.991 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 3000 (http)
+2024-04-27 23:25:57.008 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-3000"]
+2024-04-27 23:25:57.011 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-04-27 23:25:57.012 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.18]
+2024-04-27 23:25:57.117 [restartedMain] INFO  o.a.c.c.C.[.[localhost].[/api] - Initializing Spring embedded WebApplicationContext
+2024-04-27 23:25:57.117 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2729 ms
+2024-04-27 23:25:57.820 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-04-27 23:25:57.929 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+2024-04-27 23:25:57.993 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-04-27 23:25:58.525 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-04-27 23:25:58.565 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-04-27 23:25:58.812 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@74d41539
+2024-04-27 23:25:58.813 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-04-27 23:25:58.855 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-04-27 23:26:00.625 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-04-27 23:26:00.826 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-04-27 23:26:02.375 [restartedMain] INFO  o.s.d.j.r.q.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-04-27 23:26:03.715 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-04-27 23:26:06.709 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2024-04-27 23:26:06.787 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-3000"]
+2024-04-27 23:26:06.855 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 3000 (http) with context path '/api'
+2024-04-27 23:26:06.894 [restartedMain] INFO  c.n.newsnba.NewsNbaApplication - Started NewsNbaApplication in 13.403 seconds (process running for 15.056)
+2024-04-27 23:27:43.011 [http-nio-3000-exec-6] DEBUG org.hibernate.SQL - 
+    select
+        p1_0.id,
+        p1_0.count,
+        p1_0.name 
+    from
+        player p1_0 
+    where
+        p1_0.name=?
+2024-04-27 23:27:43.028 [http-nio-3000-exec-6] ERROR c.n.n.controller.PlayerController - Игрок не найден в базе : 404
+2024-04-27 23:29:46.117 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-04-27 23:29:46.122 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-04-27 23:29:46.141 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-04-28 23:53:47.059 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2024-04-28 23:53:47.096 [restartedMain] INFO  c.n.newsnba.NewsNbaApplication - Starting NewsNbaApplication using Java 17.0.10 with PID 35212 (C:\Users\nikit\IdeaProjects\NewsNBA\build\classes\java\main started by nikit in C:\Users\nikit\IdeaProjects\NewsNBA)
+2024-04-28 23:53:47.097 [restartedMain] INFO  c.n.newsnba.NewsNbaApplication - No active profile set, falling back to 1 default profile: "default"
+2024-04-28 23:53:47.135 [restartedMain] INFO  o.s.b.d.restart.ChangeableUrls - The Class-Path manifest attribute in C:\Users\nikit\.gradle\caches\modules-2\files-2.1\org.glassfish.hk2\hk2\3.0.5\d203190ff24ae760555ad48f97af719640f58636\hk2-3.0.5.jar referenced one or more files that do not exist: file:/C:/Users/nikit/.gradle/caches/modules-2/files-2.1/org.glassfish.hk2/hk2/3.0.5/d203190ff24ae760555ad48f97af719640f58636/hk2-utils.jar,file:/C:/Users/nikit/.gradle/caches/modules-2/files-2.1/org.glassfish.hk2/hk2/3.0.5/d203190ff24ae760555ad48f97af719640f58636/jakarta.annotation-api.jar,file:/C:/Users/nikit/.gradle/caches/modules-2/files-2.1/org.glassfish.hk2/hk2/3.0.5/d203190ff24ae760555ad48f97af719640f58636/jakarta.inject-api.jar,file:/C:/Users/nikit/.gradle/caches/modules-2/files-2.1/org.glassfish.hk2/hk2/3.0.5/d203190ff24ae760555ad48f97af719640f58636/hk2-api.jar,file:/C:/Users/nikit/.gradle/caches/modules-2/files-2.1/org.glassfish.hk2/hk2/3.0.5/d203190ff24ae760555ad48f97af719640f58636/aopalliance-repackaged.jar,file:/C:/Users/nikit/.gradle/caches/modules-2/files-2.1/org.glassfish.hk2/hk2/3.0.5/d203190ff24ae760555ad48f97af719640f58636/hk2-core.jar,file:/C:/Users/nikit/.gradle/caches/modules-2/files-2.1/org.glassfish.hk2/hk2/3.0.5/d203190ff24ae760555ad48f97af719640f58636/hk2-locator.jar,file:/C:/Users/nikit/.gradle/caches/modules-2/files-2.1/org.glassfish.hk2/hk2/3.0.5/d203190ff24ae760555ad48f97af719640f58636/javassist.jar,file:/C:/Users/nikit/.gradle/caches/modules-2/files-2.1/org.glassfish.hk2/hk2/3.0.5/d203190ff24ae760555ad48f97af719640f58636/hk2-runlevel.jar,file:/C:/Users/nikit/.gradle/caches/modules-2/files-2.1/org.glassfish.hk2/hk2/3.0.5/d203190ff24ae760555ad48f97af719640f58636/class-model.jar,file:/C:/Users/nikit/.gradle/caches/modules-2/files-2.1/org.glassfish.hk2/hk2/3.0.5/d203190ff24ae760555ad48f97af719640f58636/asm.jar,file:/C:/Users/nikit/.gradle/caches/modules-2/files-2.1/org.glassfish.hk2/hk2/3.0.5/d203190ff24ae760555ad48f97af719640f58636/asm-analysis.jar,file:/C:/Users/nikit/.gradle/caches/modules-2/files-2.1/org.glassfish.hk2/hk2/3.0.5/d203190ff24ae760555ad48f97af719640f58636/asm-commons.jar,file:/C:/Users/nikit/.gradle/caches/modules-2/files-2.1/org.glassfish.hk2/hk2/3.0.5/d203190ff24ae760555ad48f97af719640f58636/asm-tree.jar,file:/C:/Users/nikit/.gradle/caches/modules-2/files-2.1/org.glassfish.hk2/hk2/3.0.5/d203190ff24ae760555ad48f97af719640f58636/asm-util.jar
+2024-04-28 23:53:47.135 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-04-28 23:53:47.135 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-04-28 23:53:47.696 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-04-28 23:53:47.743 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 39 ms. Found 2 JPA repository interfaces.
+2024-04-28 23:53:48.348 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 3000 (http)
+2024-04-28 23:53:48.356 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-3000"]
+2024-04-28 23:53:48.358 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-04-28 23:53:48.358 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.18]
+2024-04-28 23:53:48.397 [restartedMain] INFO  o.a.c.c.C.[.[localhost].[/api] - Initializing Spring embedded WebApplicationContext
+2024-04-28 23:53:48.397 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1262 ms
+2024-04-28 23:53:48.629 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-04-28 23:53:48.674 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+2024-04-28 23:53:48.701 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-04-28 23:53:48.897 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-04-28 23:53:48.919 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-04-28 23:53:49.055 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@6daf888a
+2024-04-28 23:53:49.056 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-04-28 23:53:49.093 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-04-28 23:53:49.801 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-04-28 23:53:49.865 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-04-28 23:53:50.178 [restartedMain] INFO  o.s.d.j.r.q.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-04-28 23:53:50.486 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-04-28 23:53:51.069 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2024-04-28 23:53:51.084 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-3000"]
+2024-04-28 23:53:51.099 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 3000 (http) with context path '/api'
+2024-04-28 23:53:51.105 [restartedMain] INFO  c.n.newsnba.NewsNbaApplication - Started NewsNbaApplication in 4.28 seconds (process running for 4.913)
+2024-04-28 23:54:13.282 [http-nio-3000-exec-7] DEBUG org.hibernate.SQL - 
+    select
+        p1_0.id,
+        p1_0.count,
+        p1_0.name 
+    from
+        player p1_0 
+    where
+        p1_0.name=?
+2024-04-28 23:54:13.362 [http-nio-3000-exec-7] DEBUG org.hibernate.SQL - 
+    select
+        nl1_0.player_id,
+        nl1_0.id,
+        nl1_0.text,
+        nl1_0.title 
+    from
+        news nl1_0 
+    where
+        nl1_0.player_id=?
+2024-04-28 23:54:17.393 [http-nio-3000-exec-3] INFO  c.n.n.controller.PlayerController - Некорентный ввод данных
+2024-04-28 23:54:27.616 [http-nio-3000-exec-6] INFO  c.n.newsnba.logs.LoggingAspect - Выполнение метода
+2024-04-28 23:54:27.617 [http-nio-3000-exec-6] INFO  c.n.newsnba.service.PlayerService - Запрос игрока по ID: 2
+2024-04-28 23:54:27.670 [http-nio-3000-exec-6] DEBUG org.hibernate.SQL - 
+    select
+        p1_0.id,
+        p1_0.count,
+        p1_0.name,
+        nl1_0.player_id,
+        nl1_0.id,
+        nl1_0.text,
+        nl1_0.title 
+    from
+        player p1_0 
+    left join
+        news nl1_0 
+            on p1_0.id=nl1_0.player_id 
+    where
+        p1_0.id=?
+2024-04-28 23:54:27.680 [http-nio-3000-exec-6] INFO  c.n.newsnba.service.PlayerService - Игрок не найден в базе по ID:2
+2024-04-28 23:54:27.681 [http-nio-3000-exec-6] ERROR c.n.newsnba.logs.LoggingAspect - Ошибка в методе: HTTP 404 Not Found
+2024-04-28 23:54:30.297 [http-nio-3000-exec-4] INFO  c.n.newsnba.logs.LoggingAspect - Выполнение метода
+2024-04-28 23:54:30.298 [http-nio-3000-exec-4] INFO  c.n.newsnba.service.PlayerService - Запрос игрока по ID: 3
+2024-04-28 23:54:30.300 [http-nio-3000-exec-4] DEBUG org.hibernate.SQL - 
+    select
+        p1_0.id,
+        p1_0.count,
+        p1_0.name,
+        nl1_0.player_id,
+        nl1_0.id,
+        nl1_0.text,
+        nl1_0.title 
+    from
+        player p1_0 
+    left join
+        news nl1_0 
+            on p1_0.id=nl1_0.player_id 
+    where
+        p1_0.id=?
+2024-04-28 23:54:30.301 [http-nio-3000-exec-4] INFO  c.n.newsnba.service.PlayerService - Игрок не найден в базе по ID:3
+2024-04-28 23:54:30.302 [http-nio-3000-exec-4] ERROR c.n.newsnba.logs.LoggingAspect - Ошибка в методе: HTTP 404 Not Found
+2024-04-28 23:54:41.207 [http-nio-3000-exec-9] INFO  c.n.newsnba.logs.LoggingAspect - Выполнение метода
+2024-04-28 23:54:41.207 [http-nio-3000-exec-9] INFO  c.n.newsnba.service.NewsService - Запрос новости по ID: 1
+2024-04-28 23:54:41.210 [http-nio-3000-exec-9] DEBUG org.hibernate.SQL - 
+    select
+        n1_0.id,
+        n1_0.player_id,
+        p1_0.id,
+        p1_0.count,
+        p1_0.name,
+        n1_0.text,
+        n1_0.title 
+    from
+        news n1_0 
+    join
+        player p1_0 
+            on p1_0.id=n1_0.player_id 
+    where
+        n1_0.id=?
+2024-04-28 23:54:41.211 [http-nio-3000-exec-9] INFO  c.n.newsnba.service.NewsService - Ошибка сервера 500
+2024-04-28 23:54:41.213 [http-nio-3000-exec-9] ERROR c.n.newsnba.logs.LoggingAspect - Ошибка в методе: HTTP 500 Internal Server Error
+2024-04-28 23:54:46.306 [http-nio-3000-exec-1] INFO  c.n.newsnba.logs.LoggingAspect - Выполнение метода
+2024-04-28 23:54:46.307 [http-nio-3000-exec-1] INFO  c.n.newsnba.service.NewsService - Запрос новости по ID: 173
+2024-04-28 23:54:46.308 [http-nio-3000-exec-1] DEBUG org.hibernate.SQL - 
+    select
+        n1_0.id,
+        n1_0.player_id,
+        p1_0.id,
+        p1_0.count,
+        p1_0.name,
+        n1_0.text,
+        n1_0.title 
+    from
+        news n1_0 
+    join
+        player p1_0 
+            on p1_0.id=n1_0.player_id 
+    where
+        n1_0.id=?
+2024-04-28 23:54:46.310 [http-nio-3000-exec-1] INFO  c.n.newsnba.service.NewsService - Ошибка сервера 500
+2024-04-28 23:54:46.312 [http-nio-3000-exec-1] ERROR c.n.newsnba.logs.LoggingAspect - Ошибка в методе: HTTP 500 Internal Server Error
+2024-04-28 23:55:06.157 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-04-28 23:55:06.164 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-04-28 23:55:06.170 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.

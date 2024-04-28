@@ -40,12 +40,7 @@ public class NewsController {
     @Path("/{id}")
     public Response getNewsById(@PathParam("id") Long id) {
         News news = newsService.getNewsById(id);
-        if (news != null) {
-            return Response.ok(news).build();
-        } else {
-            log.error("Ошибка сервреа: 500");
-            throw new YourFriendly500Exception("ОШИБКА СЕРВЕРА !!!", 500);
-        }
+        return Response.ok(news).build();
     }
 
     @DELETE
@@ -59,9 +54,6 @@ public class NewsController {
     @Path("/{id}")
     public Response updateNews(@PathParam("id") Long id, News updatedNews) {
         News existingNews = newsService.getNewsById(id);
-        if (existingNews == null) {
-            return Response.status(Response.Status.NOT_FOUND).entity("News with id " + id + " not found").build();
-        }
         existingNews.setTitle(updatedNews.getTitle());
         existingNews.setText(updatedNews.getText());
         News savedNews = newsService.saveNews(existingNews);
