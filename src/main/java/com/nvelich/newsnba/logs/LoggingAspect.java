@@ -20,6 +20,6 @@ public class LoggingAspect {
 
     @AfterThrowing(pointcut = "execution(* com.nvelich.newsnba.service.*.*(..))", throwing = "ex")
     public void logAfterThrowing(Exception ex) {
-        logger.error(String.format("Ошибка в методе: %s", ex.getMessage()));;
+        logger.error(String.format("Ошибка в методе: %s", ex.getMessage()));
     }
 }
