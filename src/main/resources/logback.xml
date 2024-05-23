@@ -14,4 +14,8 @@
         <appender-ref ref="FILE" /> <!-- Подключение файлового аппендера к корневому логгеру -->
     </root>
 
+    <!-- Конфигурация для Hibernate -->
+    <logger name="org.hibernate.SQL" level="WARN"/> <!-- Уровень WARN для SQL-запросов Hibernate -->
+    <logger name="org.hibernate.type.descriptor.sql" level="WARN"/> <!-- Уровень WARN для логирования типов данных SQL -->
+
 </configuration>

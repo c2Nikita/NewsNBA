@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Player Details</title>
+</head>
+<body>
+<h1>Player Details</h1>
+<p>Name: <span th:text="${player.name}"></span></p>
+<p>Count: <span th:text="${player.count}"></span></p>
+
+<h2>News:</h2>
+<ul>
+    <li th:each="news : ${player.newsList}">
+        <p>Title: <span th:text="${news.title}"></span></p>
+        <p>Text: <span th:text="${news.text}"></span></p>
+    </li>
+</ul>
+</body>
+</html>

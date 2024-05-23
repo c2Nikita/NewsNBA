@@ -25,14 +25,14 @@ public class NewsService {
 
     public News saveNews(News news) {
         // Получаем связанного игрока из новости
-        Player player = news.getPlayer();
-        if (player != null) {
-            String playerName = player.getName();
-            if (playerCache.getPlayer(playerName) == null) {
-                // Если игрок отсутствует в кэше, добавляем его
-                playerCache.addPlayer(playerName, player);
-            }
-        }
+//        Player player = news.getPlayer();
+//        if (player != null) {
+//            String playerName = player.getName();
+//            if (playerCache.getPlayer(playerName) == null) {
+//                // Если игрок отсутствует в кэше, добавляем его
+//                playerCache.addPlayer(playerName, player);
+//            }
+//        }
 
         News savedNews = newsRepository.save(news);
         LOG.info("Сохранена новость: {}", savedNews.getTitle());
@@ -53,7 +53,7 @@ public class NewsService {
             return newsByID;
         } else {
             LOG.info("Ошибка сервера 500");
-            throw new YourFriendly500Exception("Ошибка сервера!!!",500);
+            throw new YourFriendly500Exception("Ошибка сервера!!!", 500);
         }
     }
 

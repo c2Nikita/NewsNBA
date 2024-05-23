@@ -17,6 +17,8 @@ import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
 import java.util.regex.Pattern;
@@ -43,7 +45,9 @@ public class PlayerController {
     @GET
     public Response getAllPlayers() {
         List<Player> players = playerService.getAllPlayers();
-        return Response.ok(players).build();
+        return Response
+                .ok(players)
+                .build();
     }
 
     @GET
@@ -86,5 +90,13 @@ public class PlayerController {
             log.info("Некорентный ввод данных");
             throw new YourFriendly400Exception("Вы некоректно ввели данные!", 400);
         }
+    }
+
+    @POST
+    @Path("/bulk")
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Response performBulkOperations(@RequestBody List<Player> playerList) {
+        playerService.savePlayers(playerList);
+        return Response.ok().build();
     }
 }

@@ -71,4 +71,15 @@ public class PlayerService {
         log.info("Игрок успешно удален по ID: {}", id);
 
     }
+
+    @Transactional
+    public void savePlayers(List<Player> playerList) {
+        playerList.stream()
+                .forEach(player -> {
+                    log.info("Сохранение игрока в базу данных: {}", player);
+                    Player savedPlayer = playerRepository.save(player);
+                    playerCache.addPlayer(savedPlayer.getName(), savedPlayer); // Добавление в кэш
+                    log.info("Игрок успешно сохранен: {}", savedPlayer);
+                });
+    }
 }
